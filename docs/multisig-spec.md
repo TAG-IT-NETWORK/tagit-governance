@@ -145,7 +145,23 @@ cast call 0xA7f34FD595eBc397Fe04DcE012dbcf0fbbD2A78D \
 | Backup keys | Recommended | Mandatory (secure vault) |
 | Audit | Internal review | External audit of Safe config |
 
-## 10. References
+## 10. Security Audit Status
+
+| Audit Tool | Date | Result |
+|------------|------|--------|
+| Slither 0.11.5 | 2026-03-29 | 0 HIGH, 0 MEDIUM, 2 LOW (accepted) |
+| Forge Tests | 2026-03-29 | 16/16 passed (incl. 200K fuzz runs) |
+
+Full report: `tagit-security/reports/slither-multisig-ownership-audit.md`
+
+## 11. Deployment Scripts
+
+| Script | Purpose | Location |
+|--------|---------|----------|
+| `DeploySafe.s.sol` | Deploy new Safe proxy with 5 owners, 3-of-5 threshold | `tagit-contracts/script/` |
+| `TransferAgentIdentityOwnership.s.sol` | Transfer ownership of 3 agent contracts to Safe | `tagit-contracts/script/` |
+
+## 12. References
 
 - [multisig-config.md](./multisig-config.md) — Operational configuration details
 - [multisig-runbook.md](./multisig-runbook.md) — Day-to-day operational procedures
